@@ -22,14 +22,24 @@ Partial Class MainXtraForm
         Me.components = New System.ComponentModel.Container()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.ReadersGridControl = New DevExpress.XtraGrid.GridControl()
+        Me.ReaderXpServerCollectionSource = New DevExpress.Xpo.XPServerCollectionSource(Me.components)
+        Me.ReadersUnitOfWork = New DevExpress.Xpo.UnitOfWork(Me.components)
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colFirstName = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colLastName = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colIdCard = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colBirthDay = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarSubItem1 = New DevExpress.XtraBars.BarSubItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.ReaderCreateBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarSubItem2 = New DevExpress.XtraBars.BarSubItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BookCreateBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.Bar4 = New DevExpress.XtraBars.Bar()
         Me.FooterBarStaticItem = New DevExpress.XtraBars.BarStaticItem()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
@@ -37,8 +47,8 @@ Partial Class MainXtraForm
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.BooksGridControl = New DevExpress.XtraGrid.GridControl()
-        Me.XpServerCollectionSource1 = New DevExpress.Xpo.XPServerCollectionSource(Me.components)
-        Me.UnitOfWork1 = New DevExpress.Xpo.UnitOfWork(Me.components)
+        Me.BookXpServerCollectionSource = New DevExpress.Xpo.XPServerCollectionSource(Me.components)
+        Me.BooksUnitOfWork = New DevExpress.Xpo.UnitOfWork(Me.components)
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colTitle = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colAuthor = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -51,11 +61,13 @@ Partial Class MainXtraForm
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.ReadersGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ReaderXpServerCollectionSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ReadersUnitOfWork, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BooksGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XpServerCollectionSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BookXpServerCollectionSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BooksUnitOfWork, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,18 +88,58 @@ Partial Class MainXtraForm
         '
         'ReadersGridControl
         '
-        Me.ReadersGridControl.Location = New System.Drawing.Point(12, 286)
+        Me.ReadersGridControl.DataSource = Me.ReaderXpServerCollectionSource
+        Me.ReadersGridControl.Location = New System.Drawing.Point(12, 274)
         Me.ReadersGridControl.MainView = Me.GridView2
         Me.ReadersGridControl.MenuManager = Me.BarManager1
         Me.ReadersGridControl.Name = "ReadersGridControl"
-        Me.ReadersGridControl.Size = New System.Drawing.Size(1082, 283)
+        Me.ReadersGridControl.Size = New System.Drawing.Size(1082, 295)
         Me.ReadersGridControl.TabIndex = 6
         Me.ReadersGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
+        'ReaderXpServerCollectionSource
+        '
+        Me.ReaderXpServerCollectionSource.DisplayableProperties = "FirstName;LastName;IdCard;BirthDate"
+        Me.ReaderXpServerCollectionSource.ObjectType = GetType(library.Reader)
+        Me.ReaderXpServerCollectionSource.Session = Me.ReadersUnitOfWork
+        '
         'GridView2
         '
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colFirstName, Me.colLastName, Me.colIdCard, Me.colBirthDay})
         Me.GridView2.GridControl = Me.ReadersGridControl
         Me.GridView2.Name = "GridView2"
+        '
+        'colFirstName
+        '
+        Me.colFirstName.Caption = "First Name"
+        Me.colFirstName.FieldName = "FirstName"
+        Me.colFirstName.Name = "colFirstName"
+        Me.colFirstName.Visible = True
+        Me.colFirstName.VisibleIndex = 0
+        '
+        'colLastName
+        '
+        Me.colLastName.Caption = "Last Name"
+        Me.colLastName.FieldName = "LastName"
+        Me.colLastName.Name = "colLastName"
+        Me.colLastName.Visible = True
+        Me.colLastName.VisibleIndex = 1
+        '
+        'colIdCard
+        '
+        Me.colIdCard.Caption = "ID Card"
+        Me.colIdCard.FieldName = "IdCard"
+        Me.colIdCard.Name = "colIdCard"
+        Me.colIdCard.Visible = True
+        Me.colIdCard.VisibleIndex = 2
+        '
+        'colBirthDay
+        '
+        Me.colBirthDay.Caption = "Birth Day"
+        Me.colBirthDay.FieldName = "BirthDate"
+        Me.colBirthDay.Name = "colBirthDay"
+        Me.colBirthDay.Visible = True
+        Me.colBirthDay.VisibleIndex = 3
         '
         'BarManager1
         '
@@ -98,9 +150,9 @@ Partial Class MainXtraForm
         Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
         Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
-        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarSubItem1, Me.BarButtonItem1, Me.BarSubItem2, Me.FooterBarStaticItem, Me.BarButtonItem2, Me.BarButtonItem3})
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarSubItem1, Me.BarButtonItem1, Me.BarSubItem2, Me.FooterBarStaticItem, Me.BarButtonItem2, Me.BarButtonItem3, Me.ReaderCreateBarButtonItem, Me.BarButtonItem5, Me.BookCreateBarButtonItem, Me.BarButtonItem7})
         Me.BarManager1.MainMenu = Me.Bar2
-        Me.BarManager1.MaxItemId = 19
+        Me.BarManager1.MaxItemId = 23
         Me.BarManager1.StatusBar = Me.Bar4
         '
         'Bar2
@@ -124,7 +176,7 @@ Partial Class MainXtraForm
         '
         Me.BarSubItem1.Caption = "&Readers"
         Me.BarSubItem1.Id = 6
-        Me.BarSubItem1.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem2)})
+        Me.BarSubItem1.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem2), New DevExpress.XtraBars.LinkPersistInfo(Me.ReaderCreateBarButtonItem), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem5)})
         Me.BarSubItem1.Name = "BarSubItem1"
         '
         'BarButtonItem2
@@ -133,11 +185,23 @@ Partial Class MainXtraForm
         Me.BarButtonItem2.Id = 17
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
+        'ReaderCreateBarButtonItem
+        '
+        Me.ReaderCreateBarButtonItem.Caption = "&Create"
+        Me.ReaderCreateBarButtonItem.Id = 19
+        Me.ReaderCreateBarButtonItem.Name = "ReaderCreateBarButtonItem"
+        '
+        'BarButtonItem5
+        '
+        Me.BarButtonItem5.Caption = "&Edit"
+        Me.BarButtonItem5.Id = 20
+        Me.BarButtonItem5.Name = "BarButtonItem5"
+        '
         'BarSubItem2
         '
         Me.BarSubItem2.Caption = "&Books"
         Me.BarSubItem2.Id = 14
-        Me.BarSubItem2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem3)})
+        Me.BarSubItem2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.BookCreateBarButtonItem), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem7)})
         Me.BarSubItem2.Name = "BarSubItem2"
         '
         'BarButtonItem3
@@ -145,6 +209,18 @@ Partial Class MainXtraForm
         Me.BarButtonItem3.Caption = "&View"
         Me.BarButtonItem3.Id = 18
         Me.BarButtonItem3.Name = "BarButtonItem3"
+        '
+        'BookCreateBarButtonItem
+        '
+        Me.BookCreateBarButtonItem.Caption = "&Create"
+        Me.BookCreateBarButtonItem.Id = 21
+        Me.BookCreateBarButtonItem.Name = "BookCreateBarButtonItem"
+        '
+        'BarButtonItem7
+        '
+        Me.BarButtonItem7.Caption = "&Edit"
+        Me.BarButtonItem7.Id = 22
+        Me.BarButtonItem7.Name = "BarButtonItem7"
         '
         'Bar4
         '
@@ -161,7 +237,7 @@ Partial Class MainXtraForm
         '
         'FooterBarStaticItem
         '
-        Me.FooterBarStaticItem.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left
+        Me.FooterBarStaticItem.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
         Me.FooterBarStaticItem.Caption = "© My Library 2023"
         Me.FooterBarStaticItem.Id = 16
         Me.FooterBarStaticItem.Name = "FooterBarStaticItem"
@@ -200,20 +276,20 @@ Partial Class MainXtraForm
         '
         'BooksGridControl
         '
-        Me.BooksGridControl.DataSource = Me.XpServerCollectionSource1
+        Me.BooksGridControl.DataSource = Me.BookXpServerCollectionSource
         Me.BooksGridControl.Location = New System.Drawing.Point(12, 12)
         Me.BooksGridControl.MainView = Me.GridView1
         Me.BooksGridControl.MenuManager = Me.BarManager1
         Me.BooksGridControl.Name = "BooksGridControl"
-        Me.BooksGridControl.Size = New System.Drawing.Size(1082, 270)
+        Me.BooksGridControl.Size = New System.Drawing.Size(1082, 258)
         Me.BooksGridControl.TabIndex = 5
         Me.BooksGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
-        'XpServerCollectionSource1
+        'BookXpServerCollectionSource
         '
-        Me.XpServerCollectionSource1.DisplayableProperties = "Title;Author;IsAvailable"
-        Me.XpServerCollectionSource1.ObjectType = GetType(library.Book)
-        Me.XpServerCollectionSource1.Session = Me.UnitOfWork1
+        Me.BookXpServerCollectionSource.DisplayableProperties = "Title;Author;IsAvailable"
+        Me.BookXpServerCollectionSource.ObjectType = GetType(library.Book)
+        Me.BookXpServerCollectionSource.Session = Me.BooksUnitOfWork
         '
         'GridView1
         '
@@ -237,6 +313,7 @@ Partial Class MainXtraForm
         '
         'colIsAvailable
         '
+        Me.colIsAvailable.Caption = "Available"
         Me.colIsAvailable.FieldName = "IsAvailable"
         Me.colIsAvailable.Name = "colIsAvailable"
         Me.colIsAvailable.Visible = True
@@ -256,16 +333,16 @@ Partial Class MainXtraForm
         Me.LayoutControlItem1.Control = Me.BooksGridControl
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1086, 274)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1086, 262)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.ReadersGridControl
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 274)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 262)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(1086, 287)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(1086, 299)
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = False
         '
@@ -300,11 +377,13 @@ Partial Class MainXtraForm
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.ReadersGridControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ReaderXpServerCollectionSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ReadersUnitOfWork, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BooksGridControl, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XpServerCollectionSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BookXpServerCollectionSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BooksUnitOfWork, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -332,8 +411,8 @@ Partial Class MainXtraForm
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BooksGridControl As DevExpress.XtraGrid.GridControl
-    Friend WithEvents XpServerCollectionSource1 As DevExpress.Xpo.XPServerCollectionSource
-    Friend WithEvents UnitOfWork1 As DevExpress.Xpo.UnitOfWork
+    Friend WithEvents BookXpServerCollectionSource As DevExpress.Xpo.XPServerCollectionSource
+    Friend WithEvents BooksUnitOfWork As DevExpress.Xpo.UnitOfWork
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents colTitle As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colAuthor As DevExpress.XtraGrid.Columns.GridColumn
@@ -342,4 +421,14 @@ Partial Class MainXtraForm
     Friend WithEvents ReadersGridControl As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents ReaderXpServerCollectionSource As DevExpress.Xpo.XPServerCollectionSource
+    Friend WithEvents ReadersUnitOfWork As DevExpress.Xpo.UnitOfWork
+    Friend WithEvents colFirstName As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colLastName As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colIdCard As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colBirthDay As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents ReaderCreateBarButtonItem As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem5 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BookCreateBarButtonItem As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
 End Class

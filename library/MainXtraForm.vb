@@ -10,4 +10,8 @@
     Private Sub ReaderCreateBarButtonItem_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles ReaderCreateBarButtonItem.ItemClick
         ReaderCreateXtraForm.Show()
     End Sub
+
+    Private Sub BarButtonItem7_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BookEditBarButtonItem.ItemClick
+        BookEditXtraForm.Show()
+    End Sub
 End Class

@@ -158,6 +158,12 @@
     <Compile Include="Forms\BookCreateXtraForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\BookEditXtraForm.Designer.vb">
+      <DependentUpon>BookEditXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BookEditXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ReaderCreateXtraForm.Designer.vb">
       <DependentUpon>ReaderCreateXtraForm.vb</DependentUpon>
     </Compile>
@@ -183,6 +189,9 @@
     <Compile Include="My Project\AssemblyInfo.vb" />
     <EmbeddedResource Include="Forms\BookCreateXtraForm.resx">
       <DependentUpon>BookCreateXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BookEditXtraForm.resx">
+      <DependentUpon>BookEditXtraForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReaderCreateXtraForm.resx">
       <DependentUpon>ReaderCreateXtraForm.vb</DependentUpon>

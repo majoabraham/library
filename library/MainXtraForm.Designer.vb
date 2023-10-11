@@ -39,7 +39,7 @@ Partial Class MainXtraForm
         Me.BarSubItem2 = New DevExpress.XtraBars.BarSubItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.BookCreateBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BookEditBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
         Me.Bar4 = New DevExpress.XtraBars.Bar()
         Me.FooterBarStaticItem = New DevExpress.XtraBars.BarStaticItem()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
@@ -150,7 +150,7 @@ Partial Class MainXtraForm
         Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
         Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
-        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarSubItem1, Me.BarButtonItem1, Me.BarSubItem2, Me.FooterBarStaticItem, Me.BarButtonItem2, Me.BarButtonItem3, Me.ReaderCreateBarButtonItem, Me.BarButtonItem5, Me.BookCreateBarButtonItem, Me.BarButtonItem7})
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarSubItem1, Me.BarButtonItem1, Me.BarSubItem2, Me.FooterBarStaticItem, Me.BarButtonItem2, Me.BarButtonItem3, Me.ReaderCreateBarButtonItem, Me.BarButtonItem5, Me.BookCreateBarButtonItem, Me.BookEditBarButtonItem})
         Me.BarManager1.MainMenu = Me.Bar2
         Me.BarManager1.MaxItemId = 23
         Me.BarManager1.StatusBar = Me.Bar4
@@ -201,7 +201,7 @@ Partial Class MainXtraForm
         '
         Me.BarSubItem2.Caption = "&Books"
         Me.BarSubItem2.Id = 14
-        Me.BarSubItem2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.BookCreateBarButtonItem), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem7)})
+        Me.BarSubItem2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.BookCreateBarButtonItem), New DevExpress.XtraBars.LinkPersistInfo(Me.BookEditBarButtonItem)})
         Me.BarSubItem2.Name = "BarSubItem2"
         '
         'BarButtonItem3
@@ -216,11 +216,11 @@ Partial Class MainXtraForm
         Me.BookCreateBarButtonItem.Id = 21
         Me.BookCreateBarButtonItem.Name = "BookCreateBarButtonItem"
         '
-        'BarButtonItem7
+        'BookEditBarButtonItem
         '
-        Me.BarButtonItem7.Caption = "&Edit"
-        Me.BarButtonItem7.Id = 22
-        Me.BarButtonItem7.Name = "BarButtonItem7"
+        Me.BookEditBarButtonItem.Caption = "&Edit"
+        Me.BookEditBarButtonItem.Id = 22
+        Me.BookEditBarButtonItem.Name = "BookEditBarButtonItem"
         '
         'Bar4
         '
@@ -422,7 +422,6 @@ Partial Class MainXtraForm
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents ReaderXpServerCollectionSource As DevExpress.Xpo.XPServerCollectionSource
-    Friend WithEvents ReadersUnitOfWork As DevExpress.Xpo.UnitOfWork
     Friend WithEvents colFirstName As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colLastName As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colIdCard As DevExpress.XtraGrid.Columns.GridColumn
@@ -430,5 +429,6 @@ Partial Class MainXtraForm
     Friend WithEvents ReaderCreateBarButtonItem As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem5 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BookCreateBarButtonItem As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BookEditBarButtonItem As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents ReadersUnitOfWork As DevExpress.Xpo.UnitOfWork
 End Class

@@ -3,17 +3,18 @@
 Public Class BookEditXtraForm
 
     Private _oid As Integer
+    Private _book As Book
     Private Sub CancelSimpleButton_Click(sender As Object, e As EventArgs) Handles CancelSimpleButton.Click
         Close()
     End Sub
 
     Private Sub OkSimpleButton_Click(sender As Object, e As EventArgs) Handles OkSimpleButton.Click
-        Using uow As New UnitOfWork
-            Dim book = New Book(uow) With {
-               .Title = TitleTextEdit.Text,
-               .Author = AuthorTextEdit.Text,
-               .IsAvailable = IsAvailableCheckEdit.Checked
-            }
+        Using uow As New UnitOfWork()
+            _book = uow.GetObjectByKey(Of Book)(_oid)
+
+            _book.Title = TitleTextEdit.Text
+            _book.Author = AuthorTextEdit.Text
+            _book.IsAvailable = IsAvailableCheckEdit.Checked
 
             uow.CommitChanges()
             uow.Dispose()
@@ -25,8 +26,24 @@ Public Class BookEditXtraForm
     End Sub
 
     Private Sub BookEditXtraForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim rowId = MainXtraForm.GridView2.GetSelectedRows().First()
-        _oid = CInt(MainXtraForm.GridView2.GetRow(rowId).Oid)
-        MessageBox.Show(_oid.ToString())
+
+        LoadBook()
+
+        TitleTextEdit.Text = _book.Title
+        AuthorTextEdit.Text = _book.Author
+        IsAvailableCheckEdit.Checked = _book.IsAvailable
+
+    End Sub
+
+    Private Sub LoadBook()
+        Dim rowId = MainXtraForm.BooksGridView.GetSelectedRows().First()
+        Dim row As Book = CType(MainXtraForm.BooksGridView.GetRow(rowId), Book)
+        _oid = row.Oid
+
+        Using uow As New UnitOfWork()
+            _book = uow.GetObjectByKey(Of Book)(_oid)
+
+            uow.Dispose()
+        End Using
     End Sub
 End Class

@@ -20,28 +20,32 @@ Partial Class BookCreateXtraForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.TitleTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.AuthorTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.IsAvailableCheckEdit = New DevExpress.XtraEditors.CheckEdit()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.AuthorTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.TitleTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.OkSimpleButton = New DevExpress.XtraEditors.SimpleButton()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.CancelSimpleButton = New DevExpress.XtraEditors.SimpleButton()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TitleTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AuthorTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IsAvailableCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AuthorTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TitleTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -60,14 +64,22 @@ Partial Class BookCreateXtraForm
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'Root
+        'IsAvailableCheckEdit
         '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem4, Me.LayoutControlItem2, Me.LayoutControlItem1, Me.LayoutControlItem3, Me.LayoutControlItem5})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(748, 318)
-        Me.Root.TextVisible = False
+        Me.IsAvailableCheckEdit.Location = New System.Drawing.Point(12, 60)
+        Me.IsAvailableCheckEdit.Name = "IsAvailableCheckEdit"
+        Me.IsAvailableCheckEdit.Properties.Caption = "Is Available"
+        Me.IsAvailableCheckEdit.Size = New System.Drawing.Size(724, 20)
+        Me.IsAvailableCheckEdit.StyleController = Me.LayoutControl1
+        Me.IsAvailableCheckEdit.TabIndex = 4
+        '
+        'AuthorTextEdit
+        '
+        Me.AuthorTextEdit.Location = New System.Drawing.Point(57, 36)
+        Me.AuthorTextEdit.Name = "AuthorTextEdit"
+        Me.AuthorTextEdit.Size = New System.Drawing.Size(679, 20)
+        Me.AuthorTextEdit.StyleController = Me.LayoutControl1
+        Me.AuthorTextEdit.TabIndex = 1
         '
         'TitleTextEdit
         '
@@ -80,6 +92,33 @@ Partial Class BookCreateXtraForm
         Me.TitleTextEdit.StyleController = Me.LayoutControl1
         Me.TitleTextEdit.TabIndex = 1
         '
+        'OkSimpleButton
+        '
+        Me.OkSimpleButton.Location = New System.Drawing.Point(200, 84)
+        Me.OkSimpleButton.Name = "OkSimpleButton"
+        Me.OkSimpleButton.Size = New System.Drawing.Size(184, 22)
+        Me.OkSimpleButton.StyleController = Me.LayoutControl1
+        Me.OkSimpleButton.TabIndex = 5
+        Me.OkSimpleButton.Text = "OK"
+        '
+        'CancelSimpleButton
+        '
+        Me.CancelSimpleButton.Location = New System.Drawing.Point(388, 84)
+        Me.CancelSimpleButton.Name = "CancelSimpleButton"
+        Me.CancelSimpleButton.Size = New System.Drawing.Size(172, 22)
+        Me.CancelSimpleButton.StyleController = Me.LayoutControl1
+        Me.CancelSimpleButton.TabIndex = 6
+        Me.CancelSimpleButton.Text = "Cancel"
+        '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem4, Me.LayoutControlItem2, Me.LayoutControlItem1, Me.LayoutControlItem3, Me.LayoutControlItem5, Me.EmptySpaceItem1, Me.EmptySpaceItem2})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(748, 318)
+        Me.Root.TextVisible = False
+        '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.TitleTextEdit
@@ -88,32 +127,6 @@ Partial Class BookCreateXtraForm
         Me.LayoutControlItem4.Size = New System.Drawing.Size(728, 24)
         Me.LayoutControlItem4.Text = "Title"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(33, 13)
-        '
-        'AuthorTextEdit
-        '
-        Me.AuthorTextEdit.Location = New System.Drawing.Point(57, 36)
-        Me.AuthorTextEdit.Name = "AuthorTextEdit"
-        Me.AuthorTextEdit.Size = New System.Drawing.Size(679, 20)
-        Me.AuthorTextEdit.StyleController = Me.LayoutControl1
-        Me.AuthorTextEdit.TabIndex = 1
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.AuthorTextEdit
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(728, 24)
-        Me.LayoutControlItem1.Text = "Author"
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(33, 13)
-        '
-        'IsAvailableCheckEdit
-        '
-        Me.IsAvailableCheckEdit.Location = New System.Drawing.Point(12, 60)
-        Me.IsAvailableCheckEdit.Name = "IsAvailableCheckEdit"
-        Me.IsAvailableCheckEdit.Properties.Caption = "Is Available"
-        Me.IsAvailableCheckEdit.Size = New System.Drawing.Size(724, 20)
-        Me.IsAvailableCheckEdit.StyleController = Me.LayoutControl1
-        Me.IsAvailableCheckEdit.TabIndex = 4
         '
         'LayoutControlItem2
         '
@@ -124,41 +137,48 @@ Partial Class BookCreateXtraForm
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = False
         '
-        'OkSimpleButton
+        'LayoutControlItem1
         '
-        Me.OkSimpleButton.Location = New System.Drawing.Point(12, 84)
-        Me.OkSimpleButton.Name = "OkSimpleButton"
-        Me.OkSimpleButton.Size = New System.Drawing.Size(372, 22)
-        Me.OkSimpleButton.StyleController = Me.LayoutControl1
-        Me.OkSimpleButton.TabIndex = 5
-        Me.OkSimpleButton.Text = "OK"
+        Me.LayoutControlItem1.Control = Me.AuthorTextEdit
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(728, 24)
+        Me.LayoutControlItem1.Text = "Author"
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(33, 13)
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.OkSimpleButton
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 72)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(188, 72)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(376, 226)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(188, 226)
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextVisible = False
-        '
-        'CancelSimpleButton
-        '
-        Me.CancelSimpleButton.Location = New System.Drawing.Point(388, 84)
-        Me.CancelSimpleButton.Name = "CancelSimpleButton"
-        Me.CancelSimpleButton.Size = New System.Drawing.Size(348, 22)
-        Me.CancelSimpleButton.StyleController = Me.LayoutControl1
-        Me.CancelSimpleButton.TabIndex = 6
-        Me.CancelSimpleButton.Text = "Cancel"
         '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.CancelSimpleButton
         Me.LayoutControlItem5.Location = New System.Drawing.Point(376, 72)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(352, 226)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(176, 226)
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem5.TextVisible = False
+        '
+        'EmptySpaceItem1
+        '
+        Me.EmptySpaceItem1.AllowHotTrack = False
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 72)
+        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(188, 226)
+        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem2
+        '
+        Me.EmptySpaceItem2.AllowHotTrack = False
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(552, 72)
+        Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(176, 226)
+        Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'BookCreateXtraForm
         '
@@ -170,15 +190,17 @@ Partial Class BookCreateXtraForm
         Me.Text = "Create Book"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TitleTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AuthorTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IsAvailableCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AuthorTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TitleTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -195,4 +217,6 @@ Partial Class BookCreateXtraForm
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents EmptySpaceItem2 As DevExpress.XtraLayout.EmptySpaceItem
 End Class

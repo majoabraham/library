@@ -41,8 +41,8 @@ Partial Class MainXtraForm
         Me.ReaderCreateBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
         Me.ReaderEditBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
         Me.BorrowingsBarSubItem = New DevExpress.XtraBars.BarSubItem()
-        Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
+        Me.CheckoutBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
+        Me.CheckinBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
         Me.Bar4 = New DevExpress.XtraBars.Bar()
         Me.FooterBarStaticItem = New DevExpress.XtraBars.BarStaticItem()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
@@ -179,7 +179,7 @@ Partial Class MainXtraForm
         Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
         Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
-        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ReadersBarSubItem, Me.BarButtonItem1, Me.BooksBarSubItem, Me.FooterBarStaticItem, Me.BarButtonItem2, Me.BarButtonItem3, Me.ReaderCreateBarButtonItem, Me.ReaderEditBarButtonItem, Me.BookCreateBarButtonItem, Me.BookEditBarButtonItem, Me.BorrowingsBarSubItem, Me.BarButtonItem4, Me.BarButtonItem5})
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ReadersBarSubItem, Me.BarButtonItem1, Me.BooksBarSubItem, Me.FooterBarStaticItem, Me.BarButtonItem2, Me.BarButtonItem3, Me.ReaderCreateBarButtonItem, Me.ReaderEditBarButtonItem, Me.BookCreateBarButtonItem, Me.BookEditBarButtonItem, Me.BorrowingsBarSubItem, Me.CheckinBarButtonItem, Me.CheckoutBarButtonItem})
         Me.BarManager1.MainMenu = Me.Bar2
         Me.BarManager1.MaxItemId = 26
         Me.BarManager1.StatusBar = Me.Bar4
@@ -249,20 +249,20 @@ Partial Class MainXtraForm
         '
         Me.BorrowingsBarSubItem.Caption = "Borrowings"
         Me.BorrowingsBarSubItem.Id = 23
-        Me.BorrowingsBarSubItem.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem5), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem4)})
+        Me.BorrowingsBarSubItem.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.CheckoutBarButtonItem), New DevExpress.XtraBars.LinkPersistInfo(Me.CheckinBarButtonItem)})
         Me.BorrowingsBarSubItem.Name = "BorrowingsBarSubItem"
         '
-        'BarButtonItem5
+        'CheckoutBarButtonItem
         '
-        Me.BarButtonItem5.Caption = "Checkout"
-        Me.BarButtonItem5.Id = 25
-        Me.BarButtonItem5.Name = "BarButtonItem5"
+        Me.CheckoutBarButtonItem.Caption = "Checkout"
+        Me.CheckoutBarButtonItem.Id = 25
+        Me.CheckoutBarButtonItem.Name = "CheckoutBarButtonItem"
         '
-        'BarButtonItem4
+        'CheckinBarButtonItem
         '
-        Me.BarButtonItem4.Caption = "Checkin"
-        Me.BarButtonItem4.Id = 24
-        Me.BarButtonItem4.Name = "BarButtonItem4"
+        Me.CheckinBarButtonItem.Caption = "Checkin"
+        Me.CheckinBarButtonItem.Id = 24
+        Me.CheckinBarButtonItem.Name = "CheckinBarButtonItem"
         '
         'Bar4
         '
@@ -562,7 +562,7 @@ Partial Class MainXtraForm
     Friend WithEvents BorrowingsXtraTabPage As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents BookXpServerCollectionSource As DevExpress.Xpo.XPServerCollectionSource
     Friend WithEvents BorrowingsBarSubItem As DevExpress.XtraBars.BarSubItem
-    Friend WithEvents BarButtonItem4 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents CheckinBarButtonItem As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BorrowingGridControl As DevExpress.XtraGrid.GridControl
     Friend WithEvents BorrowingXpServerCollectionSource As DevExpress.Xpo.XPServerCollectionSource
     Friend WithEvents BorrowingUnitOfWork As DevExpress.Xpo.UnitOfWork
@@ -571,5 +571,5 @@ Partial Class MainXtraForm
     Friend WithEvents colCheckinDate As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colReader As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colBook As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents BarButtonItem5 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents CheckoutBarButtonItem As DevExpress.XtraBars.BarButtonItem
 End Class

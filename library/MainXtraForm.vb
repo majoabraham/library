@@ -20,22 +20,33 @@
         ReaderEditXtraForm.Show()
     End Sub
 
-    Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
+    Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles CheckoutBarButtonItem.ItemClick
         CheckoutXtraForm.Show()
     End Sub
 
-    Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
+    Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles CheckinBarButtonItem.ItemClick
         CheckinXtraForm.Show()
     End Sub
 
     Private Sub AgendaXtraTabControl_Selected(sender As Object, e As DevExpress.XtraTab.TabPageEventArgs) Handles AgendaXtraTabControl.Selected
         Select Case AgendaXtraTabControl.SelectedTabPage.Name
             Case "BooksXtraTabPage"
-                MessageBox.Show("Books")
+                BookEditBarButtonItem.Enabled = True
+                ReaderEditBarButtonItem.Enabled = False
+                CheckinBarButtonItem.Enabled = False
             Case "ReadersXtraTabPage"
-                MessageBox.Show("Readers")
+                BookEditBarButtonItem.Enabled = False
+                ReaderEditBarButtonItem.Enabled = True
+                CheckinBarButtonItem.Enabled = False
             Case "BorrowingsXtraTabPage"
-                MessageBox.Show("Borrowings")
+                BookEditBarButtonItem.Enabled = False
+                ReaderEditBarButtonItem.Enabled = False
+                CheckinBarButtonItem.Enabled = True
         End Select
+    End Sub
+
+    Private Sub MainXtraForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ReaderEditBarButtonItem.Enabled = False
+        CheckinBarButtonItem.Enabled = False
     End Sub
 End Class

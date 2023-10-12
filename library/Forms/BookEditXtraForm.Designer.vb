@@ -23,7 +23,7 @@ Partial Class BookEditXtraForm
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.TitleTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.OkSimpleButton = New DevExpress.XtraEditors.SimpleButton()
+        Me.SaveSimpleButton = New DevExpress.XtraEditors.SimpleButton()
         Me.CancelSimpleButton = New DevExpress.XtraEditors.SimpleButton()
         Me.IsAvailableCheckEdit = New DevExpress.XtraEditors.CheckEdit()
         Me.AuthorTextEdit = New DevExpress.XtraEditors.TextEdit()
@@ -79,7 +79,7 @@ Partial Class BookEditXtraForm
         '
         'LayoutControl1
         '
-        Me.LayoutControl1.Controls.Add(Me.OkSimpleButton)
+        Me.LayoutControl1.Controls.Add(Me.SaveSimpleButton)
         Me.LayoutControl1.Controls.Add(Me.CancelSimpleButton)
         Me.LayoutControl1.Controls.Add(Me.IsAvailableCheckEdit)
         Me.LayoutControl1.Controls.Add(Me.AuthorTextEdit)
@@ -92,20 +92,20 @@ Partial Class BookEditXtraForm
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'OkSimpleButton
+        'SaveSimpleButton
         '
-        Me.OkSimpleButton.Location = New System.Drawing.Point(194, 84)
-        Me.OkSimpleButton.Name = "OkSimpleButton"
-        Me.OkSimpleButton.Size = New System.Drawing.Size(178, 22)
-        Me.OkSimpleButton.StyleController = Me.LayoutControl1
-        Me.OkSimpleButton.TabIndex = 7
-        Me.OkSimpleButton.Text = "OK"
+        Me.SaveSimpleButton.Location = New System.Drawing.Point(194, 84)
+        Me.SaveSimpleButton.Name = "SaveSimpleButton"
+        Me.SaveSimpleButton.Size = New System.Drawing.Size(178, 22)
+        Me.SaveSimpleButton.StyleController = Me.LayoutControl1
+        Me.SaveSimpleButton.TabIndex = 7
+        Me.SaveSimpleButton.Text = "Save"
         '
         'CancelSimpleButton
         '
         Me.CancelSimpleButton.Location = New System.Drawing.Point(376, 84)
         Me.CancelSimpleButton.Name = "CancelSimpleButton"
-        Me.CancelSimpleButton.Size = New System.Drawing.Size(178, 22)
+        Me.CancelSimpleButton.Size = New System.Drawing.Size(181, 22)
         Me.CancelSimpleButton.StyleController = Me.LayoutControl1
         Me.CancelSimpleButton.TabIndex = 8
         Me.CancelSimpleButton.Text = "Cancel"
@@ -147,7 +147,7 @@ Partial Class BookEditXtraForm
         '
         'LayoutControlItem4
         '
-        Me.LayoutControlItem4.Control = Me.OkSimpleButton
+        Me.LayoutControlItem4.Control = Me.SaveSimpleButton
         Me.LayoutControlItem4.Location = New System.Drawing.Point(182, 72)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.Size = New System.Drawing.Size(182, 226)
@@ -159,7 +159,7 @@ Partial Class BookEditXtraForm
         Me.LayoutControlItem5.Control = Me.CancelSimpleButton
         Me.LayoutControlItem5.Location = New System.Drawing.Point(364, 72)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(182, 226)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(185, 226)
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem5.TextVisible = False
         '
@@ -174,9 +174,9 @@ Partial Class BookEditXtraForm
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(546, 72)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(549, 72)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(182, 226)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(179, 226)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'BookEditXtraForm
@@ -212,7 +212,7 @@ Partial Class BookEditXtraForm
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents IsAvailableCheckEdit As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents OkSimpleButton As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SaveSimpleButton As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents CancelSimpleButton As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem

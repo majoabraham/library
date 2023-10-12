@@ -164,6 +164,18 @@
     <Compile Include="Forms\BookEditXtraForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\CheckinXtraForm.Designer.vb">
+      <DependentUpon>CheckinXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CheckinXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CheckoutXtraForm.Designer.vb">
+      <DependentUpon>CheckoutXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CheckoutXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ReaderCreateXtraForm.Designer.vb">
       <DependentUpon>ReaderCreateXtraForm.vb</DependentUpon>
     </Compile>
@@ -185,6 +197,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <EmbeddedResource Include="Forms\BookCreateXtraForm.resx">
@@ -192,6 +205,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookEditXtraForm.resx">
       <DependentUpon>BookEditXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CheckinXtraForm.resx">
+      <DependentUpon>CheckinXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CheckoutXtraForm.resx">
+      <DependentUpon>CheckoutXtraForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReaderCreateXtraForm.resx">
       <DependentUpon>ReaderCreateXtraForm.vb</DependentUpon>

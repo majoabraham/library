@@ -20,37 +20,37 @@ Partial Class ReaderEditXtraForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.IdCardTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.LastNameTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.FirstNameTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.BirthDayDateEdit = New DevExpress.XtraEditors.DateEdit()
-        Me.OkSimpleButton = New DevExpress.XtraEditors.SimpleButton()
+        Me.SaveSimpleButton = New DevExpress.XtraEditors.SimpleButton()
         Me.CancelSimpleButton = New DevExpress.XtraEditors.SimpleButton()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IdCardTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LastNameTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FirstNameTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BirthDayDateEdit.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BirthDayDateEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -59,7 +59,7 @@ Partial Class ReaderEditXtraForm
         Me.LayoutControl1.Controls.Add(Me.LastNameTextEdit)
         Me.LayoutControl1.Controls.Add(Me.FirstNameTextEdit)
         Me.LayoutControl1.Controls.Add(Me.BirthDayDateEdit)
-        Me.LayoutControl1.Controls.Add(Me.OkSimpleButton)
+        Me.LayoutControl1.Controls.Add(Me.SaveSimpleButton)
         Me.LayoutControl1.Controls.Add(Me.CancelSimpleButton)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
@@ -68,15 +68,6 @@ Partial Class ReaderEditXtraForm
         Me.LayoutControl1.Size = New System.Drawing.Size(748, 318)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
-        '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.EmptySpaceItem2, Me.EmptySpaceItem1, Me.LayoutControlItem3, Me.LayoutControlItem2})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(748, 318)
-        Me.Root.TextVisible = False
         '
         'IdCardTextEdit
         '
@@ -113,14 +104,14 @@ Partial Class ReaderEditXtraForm
         Me.BirthDayDateEdit.StyleController = Me.LayoutControl1
         Me.BirthDayDateEdit.TabIndex = 13
         '
-        'OkSimpleButton
+        'SaveSimpleButton
         '
-        Me.OkSimpleButton.Location = New System.Drawing.Point(194, 108)
-        Me.OkSimpleButton.Name = "OkSimpleButton"
-        Me.OkSimpleButton.Size = New System.Drawing.Size(178, 22)
-        Me.OkSimpleButton.StyleController = Me.LayoutControl1
-        Me.OkSimpleButton.TabIndex = 14
-        Me.OkSimpleButton.Text = "OK"
+        Me.SaveSimpleButton.Location = New System.Drawing.Point(194, 108)
+        Me.SaveSimpleButton.Name = "SaveSimpleButton"
+        Me.SaveSimpleButton.Size = New System.Drawing.Size(178, 22)
+        Me.SaveSimpleButton.StyleController = Me.LayoutControl1
+        Me.SaveSimpleButton.TabIndex = 14
+        Me.SaveSimpleButton.Text = "Save"
         '
         'CancelSimpleButton
         '
@@ -131,6 +122,15 @@ Partial Class ReaderEditXtraForm
         Me.CancelSimpleButton.TabIndex = 15
         Me.CancelSimpleButton.Text = "Cancel"
         '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.EmptySpaceItem2, Me.EmptySpaceItem1, Me.LayoutControlItem3, Me.LayoutControlItem2})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(748, 318)
+        Me.Root.TextVisible = False
+        '
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.IdCardTextEdit
@@ -139,24 +139,6 @@ Partial Class ReaderEditXtraForm
         Me.LayoutControlItem1.Size = New System.Drawing.Size(728, 24)
         Me.LayoutControlItem1.Text = "ID Card"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(51, 13)
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.LastNameTextEdit
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(728, 24)
-        Me.LayoutControlItem2.Text = "Last Name"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(51, 13)
-        '
-        'LayoutControlItem3
-        '
-        Me.LayoutControlItem3.Control = Me.FirstNameTextEdit
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(728, 24)
-        Me.LayoutControlItem3.Text = "First Name"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(51, 13)
         '
         'LayoutControlItem4
         '
@@ -169,7 +151,7 @@ Partial Class ReaderEditXtraForm
         '
         'LayoutControlItem5
         '
-        Me.LayoutControlItem5.Control = Me.OkSimpleButton
+        Me.LayoutControlItem5.Control = Me.SaveSimpleButton
         Me.LayoutControlItem5.Location = New System.Drawing.Point(182, 96)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
         Me.LayoutControlItem5.Size = New System.Drawing.Size(182, 202)
@@ -185,6 +167,14 @@ Partial Class ReaderEditXtraForm
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem6.TextVisible = False
         '
+        'EmptySpaceItem2
+        '
+        Me.EmptySpaceItem2.AllowHotTrack = False
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(546, 96)
+        Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(182, 202)
+        Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
+        '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
@@ -193,13 +183,23 @@ Partial Class ReaderEditXtraForm
         Me.EmptySpaceItem1.Size = New System.Drawing.Size(182, 202)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
-        'EmptySpaceItem2
+        'LayoutControlItem3
         '
-        Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(546, 96)
-        Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(182, 202)
-        Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem3.Control = Me.FirstNameTextEdit
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(728, 24)
+        Me.LayoutControlItem3.Text = "First Name"
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(51, 13)
+        '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.LastNameTextEdit
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(728, 24)
+        Me.LayoutControlItem2.Text = "Last Name"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(51, 13)
         '
         'ReaderEditXtraForm
         '
@@ -211,20 +211,20 @@ Partial Class ReaderEditXtraForm
         Me.Text = "Edit Reader"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IdCardTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LastNameTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FirstNameTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BirthDayDateEdit.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BirthDayDateEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -235,7 +235,7 @@ Partial Class ReaderEditXtraForm
     Friend WithEvents LastNameTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents FirstNameTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents BirthDayDateEdit As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents OkSimpleButton As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SaveSimpleButton As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents CancelSimpleButton As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem

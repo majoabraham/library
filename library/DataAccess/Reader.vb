@@ -56,4 +56,11 @@ Public Class Reader : Inherits XPObject
         End Get
     End Property
 
+    <PersistentAlias("Concat([FirstName], ' ', [LastName])")>
+    Public ReadOnly Property FullName() As String
+        Get
+            Return CType(EvaluateAlias(NameOf(FullName)), String)
+        End Get
+    End Property
+
 End Class

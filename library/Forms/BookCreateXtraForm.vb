@@ -14,7 +14,6 @@ Public Class BookCreateXtraForm
             }
 
             uow.CommitChanges()
-            uow.Dispose()
         End Using
 
         'MainXtraForm.BooksGridControl.RefreshDataSource()

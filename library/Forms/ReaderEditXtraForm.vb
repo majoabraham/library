@@ -15,7 +15,7 @@ Public Class ReaderEditXtraForm
 
     End Sub
 
-    Private Sub OkSimpleButton_Click(sender As Object, e As EventArgs) Handles OkSimpleButton.Click
+    Private Sub SaveSimpleButton_Click(sender As Object, e As EventArgs) Handles SaveSimpleButton.Click
         Using uow As New UnitOfWork()
 
             _reader = uow.GetObjectByKey(Of Reader)(_oid)

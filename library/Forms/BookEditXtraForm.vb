@@ -8,7 +8,7 @@ Public Class BookEditXtraForm
         Close()
     End Sub
 
-    Private Sub OkSimpleButton_Click(sender As Object, e As EventArgs) Handles OkSimpleButton.Click
+    Private Sub SaveSimpleButton_Click(sender As Object, e As EventArgs) Handles SaveSimpleButton.Click
         Using uow As New UnitOfWork()
             _book = uow.GetObjectByKey(Of Book)(_oid)
 
@@ -17,7 +17,6 @@ Public Class BookEditXtraForm
             _book.IsAvailable = IsAvailableCheckEdit.Checked
 
             uow.CommitChanges()
-            uow.Dispose()
         End Using
 
         MainXtraForm.BooksGridControl.DataSource = DataManipulation.GetAllBooks()
@@ -43,7 +42,6 @@ Public Class BookEditXtraForm
         Using uow As New UnitOfWork()
             _book = uow.GetObjectByKey(Of Book)(_oid)
 
-            uow.Dispose()
         End Using
     End Sub
 End Class

@@ -33,11 +33,10 @@ Partial Class MainXtraForm
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.BooksBarSubItem = New DevExpress.XtraBars.BarSubItem()
-        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.BookCreateBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
         Me.BookEditBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
+        Me.ShowReaderBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
         Me.ReadersBarSubItem = New DevExpress.XtraBars.BarSubItem()
-        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.ReaderCreateBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
         Me.ReaderEditBarButtonItem = New DevExpress.XtraBars.BarButtonItem()
         Me.BorrowingsBarSubItem = New DevExpress.XtraBars.BarSubItem()
@@ -50,6 +49,8 @@ Partial Class MainXtraForm
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.ReadersXtraTabPage = New DevExpress.XtraTab.XtraTabPage()
         Me.ReadersGridControl = New DevExpress.XtraGrid.GridControl()
         Me.ReaderXpServerCollectionSource = New DevExpress.Xpo.XPServerCollectionSource(Me.components)
@@ -179,9 +180,9 @@ Partial Class MainXtraForm
         Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
         Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
-        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ReadersBarSubItem, Me.BarButtonItem1, Me.BooksBarSubItem, Me.FooterBarStaticItem, Me.BarButtonItem2, Me.BarButtonItem3, Me.ReaderCreateBarButtonItem, Me.ReaderEditBarButtonItem, Me.BookCreateBarButtonItem, Me.BookEditBarButtonItem, Me.BorrowingsBarSubItem, Me.CheckinBarButtonItem, Me.CheckoutBarButtonItem})
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ReadersBarSubItem, Me.BarButtonItem1, Me.BooksBarSubItem, Me.FooterBarStaticItem, Me.BarButtonItem2, Me.BarButtonItem3, Me.ReaderCreateBarButtonItem, Me.ReaderEditBarButtonItem, Me.BookCreateBarButtonItem, Me.BookEditBarButtonItem, Me.BorrowingsBarSubItem, Me.CheckinBarButtonItem, Me.CheckoutBarButtonItem, Me.ShowReaderBarButtonItem})
         Me.BarManager1.MainMenu = Me.Bar2
-        Me.BarManager1.MaxItemId = 26
+        Me.BarManager1.MaxItemId = 27
         Me.BarManager1.StatusBar = Me.Bar4
         '
         'Bar2
@@ -199,14 +200,8 @@ Partial Class MainXtraForm
         '
         Me.BooksBarSubItem.Caption = "&Books"
         Me.BooksBarSubItem.Id = 14
-        Me.BooksBarSubItem.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BookCreateBarButtonItem), New DevExpress.XtraBars.LinkPersistInfo(Me.BookEditBarButtonItem)})
+        Me.BooksBarSubItem.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BookCreateBarButtonItem), New DevExpress.XtraBars.LinkPersistInfo(Me.BookEditBarButtonItem), New DevExpress.XtraBars.LinkPersistInfo(Me.ShowReaderBarButtonItem)})
         Me.BooksBarSubItem.Name = "BooksBarSubItem"
-        '
-        'BarButtonItem3
-        '
-        Me.BarButtonItem3.Caption = "&View"
-        Me.BarButtonItem3.Id = 18
-        Me.BarButtonItem3.Name = "BarButtonItem3"
         '
         'BookCreateBarButtonItem
         '
@@ -220,18 +215,18 @@ Partial Class MainXtraForm
         Me.BookEditBarButtonItem.Id = 22
         Me.BookEditBarButtonItem.Name = "BookEditBarButtonItem"
         '
+        'ShowReaderBarButtonItem
+        '
+        Me.ShowReaderBarButtonItem.Caption = "&Show Reader"
+        Me.ShowReaderBarButtonItem.Id = 26
+        Me.ShowReaderBarButtonItem.Name = "ShowReaderBarButtonItem"
+        '
         'ReadersBarSubItem
         '
         Me.ReadersBarSubItem.Caption = "&Readers"
         Me.ReadersBarSubItem.Id = 6
         Me.ReadersBarSubItem.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.ReaderCreateBarButtonItem), New DevExpress.XtraBars.LinkPersistInfo(Me.ReaderEditBarButtonItem)})
         Me.ReadersBarSubItem.Name = "ReadersBarSubItem"
-        '
-        'BarButtonItem2
-        '
-        Me.BarButtonItem2.Caption = "&View"
-        Me.BarButtonItem2.Id = 17
-        Me.BarButtonItem2.Name = "BarButtonItem2"
         '
         'ReaderCreateBarButtonItem
         '
@@ -247,20 +242,20 @@ Partial Class MainXtraForm
         '
         'BorrowingsBarSubItem
         '
-        Me.BorrowingsBarSubItem.Caption = "Borrowings"
+        Me.BorrowingsBarSubItem.Caption = "B&orrowings"
         Me.BorrowingsBarSubItem.Id = 23
         Me.BorrowingsBarSubItem.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.CheckoutBarButtonItem), New DevExpress.XtraBars.LinkPersistInfo(Me.CheckinBarButtonItem)})
         Me.BorrowingsBarSubItem.Name = "BorrowingsBarSubItem"
         '
         'CheckoutBarButtonItem
         '
-        Me.CheckoutBarButtonItem.Caption = "Checkout"
+        Me.CheckoutBarButtonItem.Caption = "Check&out"
         Me.CheckoutBarButtonItem.Id = 25
         Me.CheckoutBarButtonItem.Name = "CheckoutBarButtonItem"
         '
         'CheckinBarButtonItem
         '
-        Me.CheckinBarButtonItem.Caption = "Checkin"
+        Me.CheckinBarButtonItem.Caption = "Check&in"
         Me.CheckinBarButtonItem.Id = 24
         Me.CheckinBarButtonItem.Name = "CheckinBarButtonItem"
         '
@@ -321,6 +316,18 @@ Partial Class MainXtraForm
         Me.BarButtonItem1.Caption = "&Home"
         Me.BarButtonItem1.Id = 9
         Me.BarButtonItem1.Name = "BarButtonItem1"
+        '
+        'BarButtonItem2
+        '
+        Me.BarButtonItem2.Caption = "&View"
+        Me.BarButtonItem2.Id = 17
+        Me.BarButtonItem2.Name = "BarButtonItem2"
+        '
+        'BarButtonItem3
+        '
+        Me.BarButtonItem3.Caption = "&View"
+        Me.BarButtonItem3.Id = 18
+        Me.BarButtonItem3.Name = "BarButtonItem3"
         '
         'ReadersXtraTabPage
         '
@@ -572,4 +579,5 @@ Partial Class MainXtraForm
     Friend WithEvents colReader As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colBook As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents CheckoutBarButtonItem As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents ShowReaderBarButtonItem As DevExpress.XtraBars.BarButtonItem
 End Class

@@ -28,6 +28,9 @@ Public Class CheckinXtraForm
         'checkout
         CheckoutDateEdit.DateTime = _borrowing.CheckoutDate.Date
 
+        'checkin
+        CheckinDateEdit.DateTime = DateTime.Now
+
     End Sub
 
     Private Sub CancelSimpleButton_Click(sender As Object, e As EventArgs) Handles CancelSimpleButton.Click

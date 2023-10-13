@@ -4,9 +4,28 @@ Public Class ReaderEditXtraForm
 
     Private _oid As Integer
     Private _reader As Reader
+
+    Public Sub New()
+        InitializeComponent()
+        LoadReader()
+    End Sub
+
+    Public Sub New(reader As Reader)
+        InitializeComponent()
+
+        _reader = reader
+
+        FirstNameTextEdit.Enabled = False
+        LastNameTextEdit.Enabled = False
+        IdCardTextEdit.Enabled = False
+        BirthDayDateEdit.Enabled = False
+        SaveSimpleButton.Enabled = False
+
+    End Sub
+
     Private Sub ReaderEditXtraForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        LoadReader()
+
 
         FirstNameTextEdit.Text = _reader.FirstName
         LastNameTextEdit.Text = _reader.LastName

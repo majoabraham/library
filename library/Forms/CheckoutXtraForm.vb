@@ -23,6 +23,8 @@ Public Class CheckoutXtraForm
         ReaderLookUpEdit.Properties.ValueMember = NameOf(Reader.Oid)
         ReaderLookUpEdit.EditValue = 0
 
+        CheckoutDateEdit.DateTime = DateTime.Now()
+
     End Sub
 
     Private Sub CancelSimpleButton_Click(sender As Object, e As EventArgs) Handles CancelSimpleButton.Click

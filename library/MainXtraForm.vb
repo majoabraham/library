@@ -1,4 +1,7 @@
-﻿Public Class MainXtraForm
+﻿Imports DevExpress.Data.Filtering
+Imports DevExpress.Xpo
+
+Public Class MainXtraForm
     Public Sub New()
         InitializeComponent()
         Connection.Connect()
@@ -34,19 +37,51 @@
                 BookEditBarButtonItem.Enabled = True
                 ReaderEditBarButtonItem.Enabled = False
                 CheckinBarButtonItem.Enabled = False
+                ShowReaderBarButtonItem.Enabled = IsSelectedBookBorrowed()
             Case "ReadersXtraTabPage"
                 BookEditBarButtonItem.Enabled = False
                 ReaderEditBarButtonItem.Enabled = True
                 CheckinBarButtonItem.Enabled = False
+                ShowReaderBarButtonItem.Enabled = False
             Case "BorrowingsXtraTabPage"
                 BookEditBarButtonItem.Enabled = False
                 ReaderEditBarButtonItem.Enabled = False
                 CheckinBarButtonItem.Enabled = True
+                ShowReaderBarButtonItem.Enabled = False
         End Select
     End Sub
 
     Private Sub MainXtraForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ReaderEditBarButtonItem.Enabled = False
         CheckinBarButtonItem.Enabled = False
+        ShowReaderBarButtonItem.Enabled = IsSelectedBookBorrowed()
+    End Sub
+
+    Private Sub ShowReaderBarButtonItem_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles ShowReaderBarButtonItem.ItemClick
+        Dim bookRowId = BooksGridView.GetSelectedRows().First()
+        Dim bookRow As Book = CType(BooksGridView.GetRow(bookRowId), Book)
+
+        Dim uow As New UnitOfWork()
+
+        Dim criteria As CriteriaOperator = CriteriaOperator.FromLambda(Of Borrowing)(Function(b) b.Book.Oid = bookRow.Oid)
+        Dim borrowing = New XPCollection(Of Borrowing)(uow, criteria).First()
+
+        Dim reader = uow.GetObjectByKey(Of Reader)(borrowing.Reader.Oid)
+
+        Dim readerEditXtraForm As New ReaderEditXtraForm(reader)
+        readerEditXtraForm.Show()
+
+    End Sub
+
+    Private Function IsSelectedBookBorrowed() As Boolean
+        Dim rowId = BooksGridView.GetSelectedRows().First()
+        Dim row As Book = CType(BooksGridView.GetRow(rowId), Book)
+
+        Return Not row.IsAvailable
+
+    End Function
+
+    Private Sub BooksGridView_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles BooksGridView.SelectionChanged
+        ShowReaderBarButtonItem.Enabled = IsSelectedBookBorrowed()
     End Sub
 End Class

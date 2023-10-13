@@ -43,7 +43,8 @@ Public Class CheckoutXtraForm
                 .CheckoutDate = CheckoutDateEdit.DateTime
             }
 
-            book.IsAvailable = False
+            book.InStock -= 1
+            book.IsAvailable = book.InStock > 0
 
             uow.CommitChanges()
         End Using

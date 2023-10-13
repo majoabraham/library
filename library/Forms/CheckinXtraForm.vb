@@ -45,6 +45,7 @@ Public Class CheckinXtraForm
 
             _borrowing.CheckinDate = CheckinDateEdit.DateTime
 
+            _book.InStock += 1
             _book.IsAvailable = True
 
             uow.CommitChanges()
@@ -64,8 +65,8 @@ Public Class CheckinXtraForm
         Using uow As New UnitOfWork()
 
             _borrowing = uow.GetObjectByKey(Of Borrowing)(_oid)
-            _book = uow.GetObjectByKey(Of Book)(_borrowing.Oid)
-            _reader = uow.GetObjectByKey(Of Reader)(_borrowing.Oid)
+            _book = uow.GetObjectByKey(Of Book)(_borrowing.Book.Oid)
+            _reader = uow.GetObjectByKey(Of Reader)(_borrowing.Reader.Oid)
 
         End Using
 

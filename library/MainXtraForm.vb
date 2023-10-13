@@ -77,7 +77,7 @@ Public Class MainXtraForm
         Dim rowId = BooksGridView.GetSelectedRows().First()
         Dim row As Book = CType(BooksGridView.GetRow(rowId), Book)
 
-        Return Not row.IsAvailable
+        Return row.InStock < row.Quantity
 
     End Function
 

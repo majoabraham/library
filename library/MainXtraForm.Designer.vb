@@ -30,6 +30,7 @@ Partial Class MainXtraForm
         Me.colTitle = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colAuthor = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIsAvailable = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colQuantity = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.BooksBarSubItem = New DevExpress.XtraBars.BarSubItem()
@@ -73,6 +74,7 @@ Partial Class MainXtraForm
         Me.Agenda = New DevExpress.XtraLayout.LayoutControlItem()
         Me.Bar1 = New DevExpress.XtraBars.Bar()
         Me.Bar3 = New DevExpress.XtraBars.Bar()
+        Me.InStockGridColumn = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.AgendaXtraTabControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,13 +140,12 @@ Partial Class MainXtraForm
         '
         'BookXpServerCollectionSource
         '
-        Me.BookXpServerCollectionSource.DisplayableProperties = "Title;Author;IsAvailable"
         Me.BookXpServerCollectionSource.ObjectType = GetType(library.Book)
         Me.BookXpServerCollectionSource.Session = Me.BooksUnitOfWork
         '
         'BooksGridView
         '
-        Me.BooksGridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colTitle, Me.colAuthor, Me.colIsAvailable})
+        Me.BooksGridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colTitle, Me.colAuthor, Me.colIsAvailable, Me.colQuantity, Me.InStockGridColumn})
         Me.BooksGridView.GridControl = Me.BooksGridControl
         Me.BooksGridView.Name = "BooksGridView"
         Me.BooksGridView.OptionsBehavior.Editable = False
@@ -170,6 +171,14 @@ Partial Class MainXtraForm
         Me.colIsAvailable.Name = "colIsAvailable"
         Me.colIsAvailable.Visible = True
         Me.colIsAvailable.VisibleIndex = 2
+        '
+        'colQuantity
+        '
+        Me.colQuantity.Caption = "Quantity"
+        Me.colQuantity.FieldName = "Quantity"
+        Me.colQuantity.Name = "colQuantity"
+        Me.colQuantity.Visible = True
+        Me.colQuantity.VisibleIndex = 4
         '
         'BarManager1
         '
@@ -488,6 +497,14 @@ Partial Class MainXtraForm
         Me.Bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
         Me.Bar3.Text = "Custom 3"
         '
+        'InStockGridColumn
+        '
+        Me.InStockGridColumn.Caption = "In Stock"
+        Me.InStockGridColumn.FieldName = "InStock"
+        Me.InStockGridColumn.Name = "InStockGridColumn"
+        Me.InStockGridColumn.Visible = True
+        Me.InStockGridColumn.VisibleIndex = 3
+        '
         'MainXtraForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -580,4 +597,6 @@ Partial Class MainXtraForm
     Friend WithEvents colBook As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents CheckoutBarButtonItem As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents ShowReaderBarButtonItem As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents colQuantity As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents InStockGridColumn As DevExpress.XtraGrid.Columns.GridColumn
 End Class

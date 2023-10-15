@@ -10,7 +10,9 @@ Public Class BookCreateXtraForm
             Dim book = New Book(uow) With {
                .Title = TitleTextEdit.Text,
                .Author = AuthorTextEdit.Text,
-               .IsAvailable = IsAvailableCheckEdit.Checked
+               .IsAvailable = IsAvailableCheckEdit.Checked,
+               .Quantity = CInt(QuantitySpinEdit.Value),
+               .InStock = CInt(InStockSpinEdit.Value)
             }
 
             uow.CommitChanges()

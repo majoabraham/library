@@ -15,6 +15,8 @@ Public Class BookEditXtraForm
             _book.Title = TitleTextEdit.Text
             _book.Author = AuthorTextEdit.Text
             _book.IsAvailable = IsAvailableCheckEdit.Checked
+            _book.Quantity = CInt(QuantitySpinEdit.Value)
+            _book.InStock = CInt(InStockSpinEdit.Value)
 
             uow.CommitChanges()
         End Using
@@ -31,6 +33,8 @@ Public Class BookEditXtraForm
         TitleTextEdit.Text = _book.Title
         AuthorTextEdit.Text = _book.Author
         IsAvailableCheckEdit.Checked = _book.IsAvailable
+        QuantitySpinEdit.Value = _book.Quantity
+        InStockSpinEdit.Value = _book.InStock
 
     End Sub
 

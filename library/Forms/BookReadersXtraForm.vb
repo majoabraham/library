@@ -1,5 +1,4 @@
-﻿Imports System.Security.Cryptography
-Imports DevExpress.Data.Filtering
+﻿Imports DevExpress.Data.Filtering
 Imports DevExpress.Xpo
 
 Public Class BookReadersXtraForm
@@ -8,14 +7,21 @@ Public Class BookReadersXtraForm
         Dim rowId = MainXtraForm.BooksGridView.GetSelectedRows().First()
         Dim bookRow As Book = CType(MainXtraForm.BooksGridView.GetRow(rowId), Book)
 
-        Dim borrowings As XPCollection(Of Borrowing)
-        Dim readers As List(Of Reader)
-        Dim criteria = New BinaryOperator(NameOf(Book.Oid), bookRow.Oid, BinaryOperatorType.Equal)
+        Dim readers = New List(Of Reader)
+        Dim criteria = CriteriaOperator.FromLambda(Of Borrowing)(Function(b) b.Book.Oid = bookRow.Oid)
 
-        Using uow As New UnitOfWork()
+        Dim uow = New UnitOfWork()
 
-            borrowings = New XPCollection(Of Borrowing)(uow, criteria)
-        End Using
+        Dim borrowings = New XPCollection(Of Borrowing)(uow, criteria)
+
+        For Each borrowing In borrowings
+            If borrowing.CheckinDate = Nothing Then
+                readers.Add(borrowing.Reader)
+            End If
+
+        Next
+
+        BookReadersGridControl.DataSource = readers
 
     End Sub
 End Class

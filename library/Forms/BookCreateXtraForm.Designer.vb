@@ -33,6 +33,10 @@ Partial Class BookCreateXtraForm
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.QuantitySpinEdit = New DevExpress.XtraEditors.SpinEdit()
+        Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.InStockSpinEdit = New DevExpress.XtraEditors.SpinEdit()
+        Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.IsAvailableCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,6 +50,10 @@ Partial Class BookCreateXtraForm
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.QuantitySpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.InStockSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -55,6 +63,8 @@ Partial Class BookCreateXtraForm
         Me.LayoutControl1.Controls.Add(Me.TitleTextEdit)
         Me.LayoutControl1.Controls.Add(Me.OkSimpleButton)
         Me.LayoutControl1.Controls.Add(Me.CancelSimpleButton)
+        Me.LayoutControl1.Controls.Add(Me.QuantitySpinEdit)
+        Me.LayoutControl1.Controls.Add(Me.InStockSpinEdit)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
@@ -66,7 +76,7 @@ Partial Class BookCreateXtraForm
         '
         'IsAvailableCheckEdit
         '
-        Me.IsAvailableCheckEdit.Location = New System.Drawing.Point(12, 60)
+        Me.IsAvailableCheckEdit.Location = New System.Drawing.Point(12, 108)
         Me.IsAvailableCheckEdit.Name = "IsAvailableCheckEdit"
         Me.IsAvailableCheckEdit.Properties.Caption = "Is Available"
         Me.IsAvailableCheckEdit.Size = New System.Drawing.Size(724, 20)
@@ -75,26 +85,26 @@ Partial Class BookCreateXtraForm
         '
         'AuthorTextEdit
         '
-        Me.AuthorTextEdit.Location = New System.Drawing.Point(57, 36)
+        Me.AuthorTextEdit.Location = New System.Drawing.Point(66, 36)
         Me.AuthorTextEdit.Name = "AuthorTextEdit"
-        Me.AuthorTextEdit.Size = New System.Drawing.Size(679, 20)
+        Me.AuthorTextEdit.Size = New System.Drawing.Size(670, 20)
         Me.AuthorTextEdit.StyleController = Me.LayoutControl1
         Me.AuthorTextEdit.TabIndex = 1
         '
         'TitleTextEdit
         '
-        Me.TitleTextEdit.Location = New System.Drawing.Point(57, 12)
+        Me.TitleTextEdit.Location = New System.Drawing.Point(66, 12)
         Me.TitleTextEdit.Name = "TitleTextEdit"
         Me.TitleTextEdit.Properties.AdvancedModeOptions.Label = "Title"
         Me.TitleTextEdit.Properties.AdvancedModeOptions.LabelAppearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.TitleTextEdit.Properties.AdvancedModeOptions.LabelAppearance.Options.UseFont = True
-        Me.TitleTextEdit.Size = New System.Drawing.Size(679, 20)
+        Me.TitleTextEdit.Size = New System.Drawing.Size(670, 20)
         Me.TitleTextEdit.StyleController = Me.LayoutControl1
         Me.TitleTextEdit.TabIndex = 1
         '
         'OkSimpleButton
         '
-        Me.OkSimpleButton.Location = New System.Drawing.Point(200, 84)
+        Me.OkSimpleButton.Location = New System.Drawing.Point(200, 132)
         Me.OkSimpleButton.Name = "OkSimpleButton"
         Me.OkSimpleButton.Size = New System.Drawing.Size(184, 22)
         Me.OkSimpleButton.StyleController = Me.LayoutControl1
@@ -103,7 +113,7 @@ Partial Class BookCreateXtraForm
         '
         'CancelSimpleButton
         '
-        Me.CancelSimpleButton.Location = New System.Drawing.Point(388, 84)
+        Me.CancelSimpleButton.Location = New System.Drawing.Point(388, 132)
         Me.CancelSimpleButton.Name = "CancelSimpleButton"
         Me.CancelSimpleButton.Size = New System.Drawing.Size(172, 22)
         Me.CancelSimpleButton.StyleController = Me.LayoutControl1
@@ -114,7 +124,7 @@ Partial Class BookCreateXtraForm
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem4, Me.LayoutControlItem2, Me.LayoutControlItem1, Me.LayoutControlItem3, Me.LayoutControlItem5, Me.EmptySpaceItem1, Me.EmptySpaceItem2})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem4, Me.LayoutControlItem2, Me.LayoutControlItem1, Me.LayoutControlItem3, Me.LayoutControlItem5, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.LayoutControlItem6, Me.LayoutControlItem7})
         Me.Root.Name = "Root"
         Me.Root.Size = New System.Drawing.Size(748, 318)
         Me.Root.TextVisible = False
@@ -126,12 +136,12 @@ Partial Class BookCreateXtraForm
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.Size = New System.Drawing.Size(728, 24)
         Me.LayoutControlItem4.Text = "Title"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(33, 13)
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(42, 13)
         '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.IsAvailableCheckEdit
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 96)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.Size = New System.Drawing.Size(728, 24)
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
@@ -144,41 +154,85 @@ Partial Class BookCreateXtraForm
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
         Me.LayoutControlItem1.Size = New System.Drawing.Size(728, 24)
         Me.LayoutControlItem1.Text = "Author"
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(33, 13)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(42, 13)
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.OkSimpleButton
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(188, 72)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(188, 120)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(188, 226)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(188, 178)
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextVisible = False
         '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.CancelSimpleButton
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(376, 72)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(376, 120)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(176, 226)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(176, 178)
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem5.TextVisible = False
         '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 72)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 120)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(188, 226)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(188, 178)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(552, 72)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(552, 120)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(176, 226)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(176, 178)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'QuantitySpinEdit
+        '
+        Me.QuantitySpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.QuantitySpinEdit.Location = New System.Drawing.Point(66, 60)
+        Me.QuantitySpinEdit.Name = "QuantitySpinEdit"
+        Me.QuantitySpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.QuantitySpinEdit.Properties.IsFloatValue = False
+        Me.QuantitySpinEdit.Properties.MaskSettings.Set("mask", "N00")
+        Me.QuantitySpinEdit.Properties.MaxValue = New Decimal(New Integer() {999999, 0, 0, 0})
+        Me.QuantitySpinEdit.Size = New System.Drawing.Size(670, 20)
+        Me.QuantitySpinEdit.StyleController = Me.LayoutControl1
+        Me.QuantitySpinEdit.TabIndex = 7
+        '
+        'LayoutControlItem6
+        '
+        Me.LayoutControlItem6.Control = Me.QuantitySpinEdit
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem6.Name = "LayoutControlItem6"
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(728, 24)
+        Me.LayoutControlItem6.Text = "Quantity"
+        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(42, 13)
+        '
+        'InStockSpinEdit
+        '
+        Me.InStockSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.InStockSpinEdit.Location = New System.Drawing.Point(66, 84)
+        Me.InStockSpinEdit.Name = "InStockSpinEdit"
+        Me.InStockSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.InStockSpinEdit.Properties.IsFloatValue = False
+        Me.InStockSpinEdit.Properties.MaskSettings.Set("mask", "N00")
+        Me.InStockSpinEdit.Properties.MaxValue = New Decimal(New Integer() {999999, 0, 0, 0})
+        Me.InStockSpinEdit.Size = New System.Drawing.Size(670, 20)
+        Me.InStockSpinEdit.StyleController = Me.LayoutControl1
+        Me.InStockSpinEdit.TabIndex = 8
+        '
+        'LayoutControlItem7
+        '
+        Me.LayoutControlItem7.Control = Me.InStockSpinEdit
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 72)
+        Me.LayoutControlItem7.Name = "LayoutControlItem7"
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(728, 24)
+        Me.LayoutControlItem7.Text = "In Stock"
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(42, 13)
         '
         'BookCreateXtraForm
         '
@@ -201,6 +255,10 @@ Partial Class BookCreateXtraForm
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.QuantitySpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InStockSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -219,4 +277,8 @@ Partial Class BookCreateXtraForm
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem2 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents QuantitySpinEdit As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents InStockSpinEdit As DevExpress.XtraEditors.SpinEdit
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class BookReadersXtraForm
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,23 +17,22 @@ Partial Class BookReadersXtraForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.BookReadersGridControl = New DevExpress.XtraGrid.GridControl()
         Me.BookReadersGridView = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.colFirstName = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colLastName = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdCard = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colBirthDate = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colFullName = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookReadersGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookReadersGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -48,15 +47,6 @@ Partial Class BookReadersXtraForm
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(748, 318)
-        Me.Root.TextVisible = False
-        '
         'BookReadersGridControl
         '
         Me.BookReadersGridControl.Location = New System.Drawing.Point(12, 12)
@@ -68,18 +58,9 @@ Partial Class BookReadersXtraForm
         '
         'BookReadersGridView
         '
-        Me.BookReadersGridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colFirstName, Me.colLastName, Me.colIdCard, Me.colBirthDate, Me.colFullName})
+        Me.BookReadersGridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colFirstName, Me.colLastName, Me.colIdCard, Me.colBirthDate})
         Me.BookReadersGridView.GridControl = Me.BookReadersGridControl
         Me.BookReadersGridView.Name = "BookReadersGridView"
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.BookReadersGridControl
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(728, 298)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
         '
         'colFirstName
         '
@@ -109,12 +90,23 @@ Partial Class BookReadersXtraForm
         Me.colBirthDate.Visible = True
         Me.colBirthDate.VisibleIndex = 3
         '
-        'colFullName
+        'Root
         '
-        Me.colFullName.FieldName = "FullName"
-        Me.colFullName.Name = "colFullName"
-        Me.colFullName.Visible = True
-        Me.colFullName.VisibleIndex = 4
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(748, 318)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.BookReadersGridControl
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(728, 298)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
         '
         'BookReadersXtraForm
         '
@@ -126,9 +118,9 @@ Partial Class BookReadersXtraForm
         Me.Text = "Book Readers"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BookReadersGridControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BookReadersGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -143,5 +135,4 @@ Partial Class BookReadersXtraForm
     Friend WithEvents colLastName As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colIdCard As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colBirthDate As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colFullName As DevExpress.XtraGrid.Columns.GridColumn
 End Class

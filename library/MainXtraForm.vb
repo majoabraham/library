@@ -1,7 +1,4 @@
-﻿Imports DevExpress.Data.Filtering
-Imports DevExpress.Xpo
-
-Public Class MainXtraForm
+﻿Public Class MainXtraForm
     Public Sub New()
         InitializeComponent()
         Connection.Connect()
@@ -58,18 +55,22 @@ Public Class MainXtraForm
     End Sub
 
     Private Sub ShowReaderBarButtonItem_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles ShowReaderBarButtonItem.ItemClick
-        Dim bookRowId = BooksGridView.GetSelectedRows().First()
-        Dim bookRow As Book = CType(BooksGridView.GetRow(bookRowId), Book)
 
-        Dim uow As New UnitOfWork()
+        '1 book - 1 reader approach
+        'Dim bookRowId = BooksGridView.GetSelectedRows().First()
+        'Dim bookRow As Book = CType(BooksGridView.GetRow(bookRowId), Book)
 
-        Dim criteria As CriteriaOperator = CriteriaOperator.FromLambda(Of Borrowing)(Function(b) b.Book.Oid = bookRow.Oid)
-        Dim borrowing = New XPCollection(Of Borrowing)(uow, criteria).First()
+        'Dim uow As New UnitOfWork()
 
-        Dim reader = uow.GetObjectByKey(Of Reader)(borrowing.Reader.Oid)
+        'Dim criteria As CriteriaOperator = CriteriaOperator.FromLambda(Of Borrowing)(Function(b) b.Book.Oid = bookRow.Oid)
+        'Dim borrowing = New XPCollection(Of Borrowing)(uow, criteria).First()
 
-        Dim readerEditXtraForm As New ReaderEditXtraForm(reader)
-        readerEditXtraForm.Show()
+        'Dim reader = uow.GetObjectByKey(Of Reader)(borrowing.Reader.Oid)
+
+        'Dim readerEditXtraForm As New ReaderEditXtraForm(reader)
+        'readerEditXtraForm.Show()
+
+        BookReadersXtraForm.Show()
 
     End Sub
 

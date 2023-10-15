@@ -1,5 +1,4 @@
-﻿Imports DevExpress.Data.Filtering
-Imports DevExpress.Xpo
+﻿Imports DevExpress.Xpo
 
 Public Class CheckinXtraForm
 
@@ -26,7 +25,7 @@ Public Class CheckinXtraForm
         ReaderLookUpEdit.EditValue = _reader.Oid
 
         'checkout
-        CheckoutDateEdit.DateTime = _borrowing.CheckoutDate.Date
+        CheckoutDateEdit.DateTime = _borrowing.CheckoutDate.Value.Date
 
         'checkin
         CheckinDateEdit.DateTime = DateTime.Now
@@ -69,8 +68,6 @@ Public Class CheckinXtraForm
             _reader = uow.GetObjectByKey(Of Reader)(_borrowing.Reader.Oid)
 
         End Using
-
-
 
     End Sub
 End Class

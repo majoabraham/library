@@ -8,16 +8,14 @@ Public Class BookReadersXtraForm
         Dim bookRow As Book = CType(MainXtraForm.BooksGridView.GetRow(rowId), Book)
 
         Dim readers = New List(Of Reader)
-        Dim criteria = CriteriaOperator.FromLambda(Of Borrowing)(Function(b) b.Book.Oid = bookRow.Oid)
+        Dim criteria = CriteriaOperator.FromLambda(Of Borrowing)(Function(b) b.Book.Oid = bookRow.Oid And b.CheckinDate Is Nothing)
 
         Dim uow = New UnitOfWork()
 
         Dim borrowings = New XPCollection(Of Borrowing)(uow, criteria)
 
         For Each borrowing In borrowings
-            If borrowing.CheckinDate = Nothing Then
-                readers.Add(borrowing.Reader)
-            End If
+            readers.Add(borrowing.Reader)
 
         Next
 

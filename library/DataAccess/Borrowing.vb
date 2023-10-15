@@ -9,9 +9,9 @@ Public Class Borrowing : Inherits XPObject
 
     Private _book As Book
 
-    Private _checkoutDate As Date
+    Private _checkoutDate As Date?
 
-    Private _checkinDate As Date
+    Private _checkinDate As Date?
 
     <Association("Reader-Borrowings")>
     Property Reader As Reader
@@ -33,20 +33,20 @@ Public Class Borrowing : Inherits XPObject
         End Set
     End Property
 
-    Property CheckoutDate As Date
+    Property CheckoutDate As Date?
         Get
             Return _checkoutDate
         End Get
-        Set(ByVal value As Date)
+        Set(ByVal value As Date?)
             SetPropertyValue(NameOf(CheckoutDate), _checkoutDate, value)
         End Set
     End Property
 
-    Property CheckinDate As Date
+    Property CheckinDate As Date?
         Get
             Return _checkinDate
         End Get
-        Set(ByVal value As Date)
+        Set(ByVal value As Date?)
             SetPropertyValue(NameOf(CheckinDate), _checkinDate, value)
         End Set
     End Property

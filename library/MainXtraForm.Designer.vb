@@ -440,6 +440,7 @@ Partial Class MainXtraForm
         Me.BorrowingGridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCheckoutDate, Me.colCheckinDate, Me.colReader, Me.colBook})
         Me.BorrowingGridView.GridControl = Me.BorrowingGridControl
         Me.BorrowingGridView.Name = "BorrowingGridView"
+        Me.BorrowingGridView.OptionsBehavior.Editable = False
         '
         'colCheckoutDate
         '

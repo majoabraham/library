@@ -4,13 +4,18 @@ Public Class BookEditXtraForm
 
     Private _oid As Integer
     Private _book As Book
+    Private _uow As UnitOfWork
+
+    Public Sub New()
+        InitializeComponent()
+        _uow = New UnitOfWork()
+    End Sub
     Private Sub CancelSimpleButton_Click(sender As Object, e As EventArgs) Handles CancelSimpleButton.Click
         Close()
     End Sub
 
     Private Sub SaveSimpleButton_Click(sender As Object, e As EventArgs) Handles SaveSimpleButton.Click
-        Using uow As New UnitOfWork()
-            _book = uow.GetObjectByKey(Of Book)(_oid)
+        Using _uow
 
             _book.Title = TitleTextEdit.Text
             _book.Author = AuthorTextEdit.Text
@@ -18,7 +23,7 @@ Public Class BookEditXtraForm
             _book.Quantity = CInt(QuantitySpinEdit.Value)
             _book.InStock = CInt(InStockSpinEdit.Value)
 
-            uow.CommitChanges()
+            _uow.CommitChanges()
         End Using
 
         MainXtraForm.BooksGridControl.DataSource = DataManipulation.GetAllBooks()
@@ -43,9 +48,7 @@ Public Class BookEditXtraForm
         Dim row As Book = CType(MainXtraForm.BooksGridView.GetRow(rowId), Book)
         _oid = row.Oid
 
-        Using uow As New UnitOfWork()
-            _book = uow.GetObjectByKey(Of Book)(_oid)
+        _book = _uow.GetObjectByKey(Of Book)(_oid)
 
-        End Using
     End Sub
 End Class

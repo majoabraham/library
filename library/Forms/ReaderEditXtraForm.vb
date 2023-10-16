@@ -4,14 +4,18 @@ Public Class ReaderEditXtraForm
 
     Private _oid As Integer
     Private _reader As Reader
+    Private _uow As UnitOfWork
 
     Public Sub New()
         InitializeComponent()
+        _uow = New UnitOfWork()
         LoadReader()
     End Sub
 
     Public Sub New(reader As Reader)
         InitializeComponent()
+
+        _uow = New UnitOfWork()
 
         _reader = reader
 
@@ -25,8 +29,6 @@ Public Class ReaderEditXtraForm
 
     Private Sub ReaderEditXtraForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-
         FirstNameTextEdit.Text = _reader.FirstName
         LastNameTextEdit.Text = _reader.LastName
         IdCardTextEdit.Text = _reader.IdCard
@@ -35,17 +37,16 @@ Public Class ReaderEditXtraForm
     End Sub
 
     Private Sub SaveSimpleButton_Click(sender As Object, e As EventArgs) Handles SaveSimpleButton.Click
-        Using uow As New UnitOfWork()
+        Using _uow
 
-            _reader = uow.GetObjectByKey(Of Reader)(_oid)
+            _reader = _uow.GetObjectByKey(Of Reader)(_oid)
 
             _reader.FirstName = FirstNameTextEdit.Text
             _reader.LastName = LastNameTextEdit.Text
             _reader.IdCard = IdCardTextEdit.Text
             _reader.BirthDate = BirthDayDateEdit.DateTime
 
-            uow.CommitChanges()
-            uow.Dispose()
+            _uow.CommitChanges()
         End Using
 
         MainXtraForm.ReadersGridControl.DataSource = DataManipulation.GetAllReaders()
@@ -62,10 +63,7 @@ Public Class ReaderEditXtraForm
         Dim row As Reader = CType(MainXtraForm.ReadersGridView.GetRow(rowId), Reader)
         _oid = row.Oid
 
-        Using uow As New UnitOfWork()
-            _reader = uow.GetObjectByKey(Of Reader)(_oid)
+        _reader = _uow.GetObjectByKey(Of Reader)(_oid)
 
-            uow.Dispose()
-        End Using
     End Sub
 End Class
